@@ -1,0 +1,58 @@
+== tm_helper
+
+Some useful utilities for Ruby development in TextMate.
+
+== Features
+
+* Formats +puts+ output when running RSpec specs in TextMate using the RSpec TextMate bundle.
+  * Namely, it escapes HTML and converts +\n+ characters to +<br/>+.
+  * This is useful when using +puts+ to debug code while running specs in TextMate.
+* Supports forcing of logs to the Textmate window.
+  * Defining TM_SHOW_LOGS in your TextMate Preferences->Shell Variables will cause all logs issued using the Logger class be to redirected to the TextMate runner window.
+  * This is useful when you want to see your application's logs while running an RSpec spec in TextMate.
+
+== Installation
+
+Include tm_helper into your Gemfile.
+
+  gem 'tm_helper'
+
+== Usage
+
+Simply use +puts+ as you would normally.  Output will be automatically formatted when running in an RSpec window.
+
+Define TM_SHOW_LOGS in your TextMate Preferences->Shell Variables to cause Logger logs issued by your application be to redirected to the TextMate runner window.
+
+=== Advanced Usage
+
+To test whether your code is running in TextMate, use the +running_in_textmate?+ function:
+
+  if TmHelper.running_in_textmate? 
+    puts "I am running in TextMate."
+  end
+  
+To test whether your spec is being executed using the RSpec TextMate bundle, use the +running_rspec_bundle?+ function:
+
+  if TmHelper.running_rspec_bundle? 
+    puts "I am running in TextMate with the RSpec TextMate bundle loaded."
+  end
+  
+== NOTES
+
+== LICENSE
+
+  Copyright 2010 Capital Thought, LLC
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use any part of this software or its source code except
+  in compliance with the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+
