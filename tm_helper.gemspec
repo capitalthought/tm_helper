@@ -13,10 +13,17 @@ Gem::Specification.new do |s|
   s.description = %q{}
   s.email = %q{billdoughty@capitalthought.com}
   s.extra_rdoc_files = [
-    "README.rdoc"
+    "LICENSE",
+     "README.rdoc"
   ]
   s.files = [
-    "VERSION"
+    "LICENSE",
+     "README.rdoc",
+     "Rakefile",
+     "VERSION",
+     "lib/tm_helper.rb",
+     "lib/tm_helper/tm_helper.rb",
+     "tm_helper.gemspec"
   ]
   s.homepage = %q{http://github.com/capitalthought/tm_helper}
   s.rdoc_options = ["--charset=UTF-8"]
